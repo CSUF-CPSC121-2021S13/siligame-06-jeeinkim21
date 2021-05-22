@@ -6,6 +6,8 @@
 #include "cpputils/graphics/image.h"
  
 void Game::CreateOpponents() {
+  
+  if (!HasLost()) {
   int x = rand() % 700 + 1;
   int y = rand() % 300 + 1;
   std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
@@ -33,15 +35,17 @@ void Game::CreateOpponents() {
   }
 
    if (score_ >= 70) {
+     for (int i = 0; i < 30; i++) {
    int x = rand() % 700 + 1;
   int y = rand() % 300 + 1;
   std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
   opponents_.push_back(std::move(opponent));
   }
+  }
+  }
+  }
 
 
-
-}
  
 void Game::LaunchProjectiles() {
   for (int i = 0; i < opponents_.size(); i++) {
@@ -162,13 +166,13 @@ void Game::UpdateScreen() {
  
  
   if (HasLost()) {
-    background_.DrawRectangle(0,0, background_.GetWidth(),
-    background_.GetHeight(), 255,255,255);
+    // background_.DrawRectangle(0,0, background_.GetWidth(),
+    // background_.GetHeight(), 0,0,0);
     std::string gameOverMessage =
         "GAME OVER\n  Score: " + std::to_string(score_);
-    background_.DrawText(200, 250, gameOverMessage, 100, 196, 24, 24);
+    background_.DrawText(220, 250, gameOverMessage, 100, 196, 24, 24);
     std::string playAgain = "click to play again"; 
-    background_.DrawText(270, 440, playAgain, 40, 0, 0, 0);
+    background_.DrawText(300, 440, playAgain, 40, 255, 255, 255);
  
 }
 }
