@@ -10,7 +10,37 @@ void Game::CreateOpponents() {
   int y = rand() % 300 + 1;
   std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
   opponents_.push_back(std::move(opponent));
-  return;
+  
+  if (score_ >= 10) {
+   int x = rand() % 700 + 1;
+  int y = rand() % 300 + 1;
+  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
+  opponents_.push_back(std::move(opponent));
+  }
+
+  if (score_ >= 30) {
+  int x = rand() % 700 + 1;
+  int y = rand() % 300 + 1;
+  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
+  opponents_.push_back(std::move(opponent));
+  }
+
+   if (score_ >= 50) {
+  int x = rand() % 700 + 1;
+  int y = rand() % 300 + 1;
+  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
+  opponents_.push_back(std::move(opponent));
+  }
+
+   if (score_ >= 70) {
+   int x = rand() % 700 + 1;
+  int y = rand() % 300 + 1;
+  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(x, y);
+  opponents_.push_back(std::move(opponent));
+  }
+
+
+
 }
  
 void Game::LaunchProjectiles() {
