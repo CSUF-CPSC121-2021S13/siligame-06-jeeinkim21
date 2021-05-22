@@ -24,7 +24,7 @@ class Player : public GameElement {
  
   void Draw3(graphics::Image& image);
 
-  void Draw4(graphics::Image& image);
+//   void Draw4(graphics::Image& image);
 
   private:
   graphics::Image playerImage;
