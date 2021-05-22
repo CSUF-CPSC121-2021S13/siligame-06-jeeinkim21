@@ -68,7 +68,7 @@ void Game::UpdateScreen() {
   }
   if (player.GetIsActive() == true && score_ > 10 
   && rockLee == true) { //draw Rock Lee 
-    player.Draw2(background_);
+    player.Draw1(background_);
   }
   if(score_>=30) { 
     rockLee = false; 
