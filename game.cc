@@ -77,7 +77,7 @@ void Game::UpdateScreen() {
   }
   if (player.GetIsActive() == true && score_ > 30 && toggle2 == true 
   && toggle == false && rockLee == false && gaara == true) { //stop drawing Rock Lee
-    player.Draw3(background_); 
+    player.Draw2(background_); 
   }
   if (score_>= 70) {
     gaara = false; 

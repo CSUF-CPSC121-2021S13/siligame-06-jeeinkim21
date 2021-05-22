@@ -19,19 +19,19 @@ void Player::Draw4(graphics::Image& image) {
   }
 }
 
-void Player::Draw3(graphics::Image& image) {
-   graphics::Image playerImage(50,50);
-   graphics::Color doNotDraw(255,255,255);
-   graphics::Color green(11,87,63);
-    playerImage.Load("gaara.bmp");
-    for (int i = 0; i < playerImage.GetWidth(); i++) {
-    for (int j = 0; j < playerImage.GetHeight(); j++) {
-      if (playerImage.GetColor(i,j) != doNotDraw && playerImage.GetColor(i,j) != green) {
-      image.SetColor(GetX() + i, GetY() + j, playerImage.GetColor(i, j));
-    }
-    }
-  }
-}
+// void Player::Draw3(graphics::Image& image) {
+//    graphics::Image playerImage(50,50);
+//    graphics::Color doNotDraw(255,255,255);
+//    graphics::Color green(11,87,63);
+//     playerImage.Load("gaara.bmp");
+//     for (int i = 0; i < playerImage.GetWidth(); i++) {
+//     for (int j = 0; j < playerImage.GetHeight(); j++) {
+//       if (playerImage.GetColor(i,j) != doNotDraw && playerImage.GetColor(i,j) != green) {
+//       image.SetColor(GetX() + i, GetY() + j, playerImage.GetColor(i, j));
+//     }
+//     }
+//   }
+// }
 
 // void Player::Draw1(graphics::Image& image) {
 //    graphics::Image playerImage(50,50);
@@ -47,6 +47,17 @@ void Player::Draw3(graphics::Image& image) {
 // }
 // }
 
+void Player::Draw2(graphics::Image& image) {
+   if (toggleSwitch) {
+    playerImage.Load("gaara.bmp");
+    Helper(playerImage, image);
+    toggleSwitch = false;
+  } else {
+    playerImage2.Load("gaara2.bmp");
+    Helper(playerImage2, image);
+    toggleSwitch = true;
+  }
+}
 
 void Player::Draw1(graphics::Image& image) {
    if (toggleSwitch) {
