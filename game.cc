@@ -170,9 +170,9 @@ void Game::UpdateScreen() {
     // background_.GetHeight(), 0,0,0);
     std::string gameOverMessage =
         "GAME OVER\n  Score: " + std::to_string(score_);
-    background_.DrawText(220, 250, gameOverMessage, 100, 196, 24, 24);
+    background_.DrawText(240, 250, gameOverMessage, 100, 196, 24, 24);
     std::string playAgain = "click to play again"; 
-    background_.DrawText(300, 440, playAgain, 40, 255, 255, 255);
+    background_.DrawText(320, 440, playAgain, 40, 255, 255, 255);
  
 }
 }
